@@ -1,5 +1,6 @@
 import random
 
+
 def jogar():
     print("******************************")
     print("Bem vindo ao jogo Adivinhação!")
@@ -15,9 +16,9 @@ def jogar():
 
     nivel = int(input("Defina o nivel: "))
 
-    if(nivel == 1):
+    if (nivel == 1):
         total_de_tentativas = 10
-    elif(nivel == 2):
+    elif (nivel == 2):
         total_de_tentativas = 5
     else:
         total_de_tentativas = 3
@@ -49,6 +50,10 @@ def jogar():
             pontos = pontos - pontos_perdidos
 
     print("Fim de jogo o numero secreto era:", numero_secreto)
+
+
+if (__name__ == "__main__"):
+    jogar()
 
     # ********** Usando o Loop While inves do for **********
 
