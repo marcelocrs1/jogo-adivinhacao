@@ -43,12 +43,16 @@ def jogar():
 
 
 # ********* Texto Abertura *********
+
+
 def text_open_game():
     print("******************************")
     print("Bem vindo ao jogo da Forca!")
     print("******************************")
 
 # ********* Função Carregar Palavra Secreta *********
+
+
 def load_secret_word():
     arquivo = open("palavras.txt", "r")
     palavras = []
@@ -64,8 +68,11 @@ def load_secret_word():
     return palavra_secreta
 
 # ********* Função Inicializar Palavra Secreta *********
+
+
 def start_words_rights(palavra):
     return ["_" for letra in palavra]
+
 
 if(__name__ == "__main__"):
     jogar()
