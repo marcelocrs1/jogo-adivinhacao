@@ -1,8 +1,11 @@
+import random
+
 print("******************************")
 print("Bem vindo ao jogo Adivinhação!")
 print("******************************")
 
-numero_secreto = 42
+numero_random = random.randrange(1, 101)
+numero_secreto = numero_random
 total_de_tentativas = 3
 rodada = 1
 
@@ -11,7 +14,7 @@ for rodada in range(1, total_de_tentativas + 1):
     chute_str = input("Digite um número entre 1 e 100: ")
     chute = int(chute_str)
 
-    if(chute < 1 or chute > 100):
+    if (chute < 1 or chute > 100):
         print("Você deve digitar um número entre 1 e 100!")
         continue
 
@@ -30,9 +33,7 @@ for rodada in range(1, total_de_tentativas + 1):
         elif (menor):
             print("Você errou! O seu chute foi menor do que o número secreto!")
 
-
-
-print("Fim de jogo")
+print("Fim de jogo o numero secreto era:", numero_secreto)
 
 # ********** Usando o Loop While inves do for **********
 
@@ -56,3 +57,5 @@ print("Fim de jogo")
 #             print("Você errou! O seu chute foi menor do que o número secreto!")
 #
 #     rodada += 1
+
+# "R$ {:7.2f}".format(1.59)  Outra opão de format
