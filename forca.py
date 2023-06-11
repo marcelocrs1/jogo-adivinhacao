@@ -5,11 +5,8 @@ def jogar():
 
     text_open_game()
     palavra_secreta = load_secret_word()
+
     letras_acertadas = start_words_rights(palavra_secreta)
-
-    # for letra in palavra_secreta:
-    #     letras_acertadas.append("_")
-
     print(letras_acertadas)
 
     enforcou = False
@@ -18,15 +15,10 @@ def jogar():
 
     while(not enforcou and not acertou):
 
-        chute = input("Digite uma letra: ")
-        chute = chute.strip().upper()
+        chute = pede_chute()
 
         if(chute in palavra_secreta):
-            index = 0
-            for letra in palavra_secreta:
-                if(chute == letra):
-                    letras_acertadas[index] = letra
-                index += 1
+            marca_chute_correto(chute, letras_acertadas, palavra_secreta)
         else:
             erros += 1
 
@@ -35,11 +27,9 @@ def jogar():
         print(letras_acertadas)
 
     if(acertou):
-        print("Você ganhou!")
+        mensagem_ganhou()
     else:
-        print("Você perdeu!")
-
-    print("Fim do Jogo")
+        mensagem_perdeu()
 
 
 # ********* Texto Abertura *********
@@ -72,6 +62,35 @@ def load_secret_word():
 
 def start_words_rights(palavra):
     return ["_" for letra in palavra]
+
+# ********* Função Chute *********
+
+
+def pede_chute():
+    chute = input("Digite uma letra: ")
+    chute = chute.strip().upper()
+    return chute
+
+# ********* Função Marcar Chutes posição correta *********
+
+
+def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
+    index = 0
+    for letra in palavra_secreta:
+        if (chute == letra):
+            letras_acertadas[index] = letra
+        index += 1
+
+
+# ********* Função Mensagem Venceu/Perdeu *********
+
+
+def mensagem_ganhou():
+    print("Você ganhou!")
+
+
+def mensagem_perdeu():
+    print("Você perdeu!")
 
 
 if(__name__ == "__main__"):
